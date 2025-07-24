@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Storage with Firebase</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #181818;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.4);
+      padding: 32px 28px 24px 28px;
+      max-width: 420px;
+      width: 100%;
+      margin: 32px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+      border: 1px solid #232323;
+      animation: cardFadeIn 0.8s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-align: center;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .textarea-container {
+      position: relative;
+      width: 100%;
+    }
+    #input {
+      width: 100%;
+      min-height: 70px;
+      background: #111;
+      color: #f5f5f5;
+      border: 1.5px solid #333;
+      border-radius: 10px;
+      padding: 14px 12px 14px 12px;
+      font-size: 1.1rem;
+      outline: none;
+      resize: vertical;
+      transition: border 0.2s;
+      box-sizing: border-box;
+    }
+    #input:focus {
+      border: 1.5px solid #00bfae;
+    }
+    .button-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+    button {
+      background: linear-gradient(90deg, #232526 0%, #414345 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+      transition: background 0.2s, transform 0.1s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #00bfae 0%, #1de9b6 100%);
+      color: #111;
+      transform: translateY(-2px) scale(1.04);
+    }
+    #readTXT {
+      white-space: pre-wrap;
+      margin-top: 18px;
+      background: #181818;
+      border-radius: 10px;
+      min-height: 48px;
+      padding: 14px 12px;
+      font-size: 1.08rem;
+      border: 1px solid #232323;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+      color: #00e6c3;
+      font-family: 'Fira Mono', 'Consolas', monospace;
+      letter-spacing: 0.2px;
+      transition: background 0.2s;
+    }
+    #qrcode {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 18px 6px 16px 6px;
+        max-width: 98vw;
+      }
+      .title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">Text Storage</div>
+    <div class="subtitle">Store, retrieve, and share your text securely</div>
+    <div class="textarea-container">
+      <textarea id="input" autocomplete="off"></textarea>
+    </div>
+    <div class="button-row">
+      <button id="writeBTN">Write</button>
+      <button id="readBTN">Read</button>
+      <button id="copyBTN">Copy Text</button>
+    </div>
+    <div id="readTXT"></div>
+    <div id="qrcode"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
