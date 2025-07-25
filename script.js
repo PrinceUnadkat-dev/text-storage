@@ -3,9 +3,6 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/9
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
 
 // Firebase config
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyBYuQ4i5jbwikpu_nk4E4cnaWHVFGI-VPc",
   authDomain: "text-storage-2a0b3.firebaseapp.com",
