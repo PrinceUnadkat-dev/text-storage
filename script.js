@@ -3,15 +3,18 @@ import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/9
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
 
 // Firebase config
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
-  apiKey: "AIzaSyC3Y1eyGSvlViHj0SGABNR7SupIEeYtHg8",
-  authDomain: "storage-a5e95.firebaseapp.com",
-  databaseURL: "https://storage-a5e95-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "storage-a5e95",
-  storageBucket: "storage-a5e95.firebasestorage.app",
-  messagingSenderId: "212216834343",
-  appId: "1:212216834343:web:600971d1bc36ec48b16102",
-  measurementId: "G-606YG8PV6D"
+  apiKey: "AIzaSyBYuQ4i5jbwikpu_nk4E4cnaWHVFGI-VPc",
+  authDomain: "text-storage-2a0b3.firebaseapp.com",
+  databaseURL: "https://text-storage-2a0b3-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "text-storage-2a0b3",
+  storageBucket: "text-storage-2a0b3.firebasestorage.app",
+  messagingSenderId: "737296733775",
+  appId: "1:737296733775:web:3b0f9095d631e39fb2fc3a",
+  measurementId: "G-PE1H1CBN8W"
 };
 
 // Initialize Firebase
